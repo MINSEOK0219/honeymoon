@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>민석 & 신부의 신혼여행</title>
+<title>민석 & 은경의 신혼여행</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f7f8fa;color:#1a1a1a;max-width:430px;margin:0 auto;min-height:100vh;padding-bottom:70px}
@@ -26,7 +26,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .section.active{display:block}
 .section-title{font-size:15px;font-weight:600;margin-bottom:12px}
 
-/* Day cards */
 .day-card{background:#fff;border-radius:13px;padding:13px 15px;margin-bottom:9px;border:1px solid #e5e7eb;cursor:pointer;display:flex;align-items:center;gap:11px}
 .day-num{background:#1a5276;color:#fff;border-radius:9px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
 .day-info{flex:1;min-width:0}
@@ -38,7 +37,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .badge-mal{background:#dcfce7;color:#15803d}
 .badge-por{background:#fce7f3;color:#9d174d}
 
-/* Modal */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;max-width:430px;margin:0 auto}
 .modal-overlay.open{display:block}
 .modal{position:absolute;bottom:0;left:0;right:0;background:#f7f8fa;border-radius:20px 20px 0 0;max-height:92vh;overflow-y:auto}
@@ -48,7 +46,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .modal-close{position:absolute;right:14px;top:14px;background:rgba(255,255,255,0.2);border:none;color:#fff;border-radius:50%;width:28px;height:28px;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .modal-body{padding:14px}
 
-.timeline-item{display:flex;gap:10px;margin-bottom:0}
+.timeline-item{display:flex;gap:10px}
 .tl-left{display:flex;flex-direction:column;align-items:center;width:50px;flex-shrink:0}
 .tl-time{font-size:11px;font-weight:600;color:#1a5276;white-space:nowrap;text-align:center}
 .tl-dot{width:9px;height:9px;border-radius:50%;background:#1a5276;margin-top:4px;flex-shrink:0}
@@ -59,18 +57,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tl-map{display:inline-flex;align-items:center;gap:3px;margin-top:7px;font-size:11px;color:#1a5276;text-decoration:none;font-weight:500}
 .badge-req{background:#fef3c7;color:#92400e;font-size:10px;padding:2px 6px;border-radius:8px;font-weight:500;margin-left:5px}
 
-/* 명소 섹션 */
-.spot-section{margin-bottom:14px}
-.spot-section-title{font-size:13px;font-weight:600;color:#1a5276;margin-bottom:8px;padding-left:2px}
-.spot-card{background:#fff;border-radius:11px;padding:11px 13px;margin-bottom:7px;border:1px solid #e5e7eb;display:flex;align-items:flex-start;gap:10px}
-.spot-emoji{font-size:20px;flex-shrink:0;margin-top:1px}
-.spot-info .name{font-size:13px;font-weight:600}
-.spot-info .cat{font-size:11px;color:#9ca3af;margin-top:1px}
-.spot-info .rating{font-size:11px;color:#f59e0b;margin-top:2px}
-.spot-map{margin-top:6px}
-
 /* 맛집 */
-.resto-filter{display:flex;gap:7px;margin-bottom:12px;overflow-x:auto;padding-bottom:2px}
+.resto-filter{display:flex;gap:7px;margin-bottom:10px;overflow-x:auto;padding-bottom:2px}
 .filter-btn{border:1.5px solid #e5e7eb;background:#fff;border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;cursor:pointer;white-space:nowrap;color:#6b7280}
 .filter-btn.active{border-color:#1a5276;background:#1a5276;color:#fff}
 .sub-filter{display:flex;gap:6px;margin-bottom:10px;overflow-x:auto;padding-bottom:2px}
@@ -81,29 +69,51 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .resto-en{font-size:11px;color:#9ca3af;font-weight:400}
 .resto-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px}
 .tag{font-size:10px;padding:2px 7px;border-radius:9px;background:#f3f4f6;color:#4b5563;font-weight:500}
+.rating-badge{font-size:11px;color:#92400e;background:#fef3c7;padding:2px 7px;border-radius:8px}
 .resto-row{display:flex;justify-content:space-between;align-items:center;margin-top:5px}
 .resto-menu{font-size:11px;color:#6b7280}
 .price{font-weight:600;color:#374151;font-size:12px}
-.rating-badge{font-size:11px;color:#92400e;background:#fef3c7;padding:2px 7px;border-radius:8px}
-.map-btn{font-size:11px;color:#1a5276;border:1px solid #bfdbfe;background:#eff6ff;padding:3px 9px;border-radius:7px;text-decoration:none;font-weight:500}
+.btn-row{display:flex;gap:7px;margin-top:8px;flex-wrap:wrap}
+.map-btn{font-size:11px;color:#1a5276;border:1px solid #bfdbfe;background:#eff6ff;padding:4px 10px;border-radius:7px;text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:3px}
+.review-btn{font-size:11px;color:#15803d;border:1px solid #bbf7d0;background:#f0fdf4;padding:4px 10px;border-radius:7px;text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:3px}
 
-/* 이동/정보 */
+/* 명소 */
+.spot-section{margin-bottom:14px}
+.spot-section-title{font-size:13px;font-weight:600;color:#1a5276;margin-bottom:8px;padding-left:2px}
+.spot-card{background:#fff;border-radius:11px;padding:11px 13px;margin-bottom:7px;border:1px solid #e5e7eb;display:flex;align-items:flex-start;gap:10px}
+.spot-info .name{font-size:13px;font-weight:600}
+.spot-info .cat{font-size:11px;color:#9ca3af;margin-top:1px}
+.spot-info .rating{font-size:11px;color:#f59e0b;margin-top:2px}
+.spot-note{font-size:11px;color:#6b7280;margin-top:3px}
+
+/* 정보/유의사항 */
 .info-card{background:#fff;border-radius:13px;padding:13px 15px;margin-bottom:9px;border:1px solid #e5e7eb}
-.info-card h3{font-size:13px;font-weight:600;margin-bottom:9px;display:flex;align-items:center;gap:5px}
+.info-card h3{font-size:13px;font-weight:600;margin-bottom:9px}
 .info-item{display:flex;gap:9px;padding:6px 0;border-bottom:1px solid #f3f4f6;font-size:12px;line-height:1.5}
 .info-item:last-child{border-bottom:none;padding-bottom:0}
 .info-label{color:#9ca3af;font-size:11px;width:76px;flex-shrink:0;padding-top:1px}
 .info-val{color:#1a1a1a;flex:1}
-.warn-item{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:9px 11px;margin-bottom:7px;font-size:12px;color:#78350f;line-height:1.5}
+
+/* 주의사항 도시별 */
+.warn-section{margin-bottom:14px}
+.warn-section-title{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:8px;padding:0 2px;display:flex;align-items:center;gap:6px}
+.warn-item{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:9px 12px;margin-bottom:7px;font-size:12px;color:#78350f;line-height:1.6;display:flex;gap:8px}
+.warn-item .wi{flex-shrink:0;font-size:14px}
+.warn-item .wt{flex:1}
+.warn-tip{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:9px 12px;margin-bottom:7px;font-size:12px;color:#14532d;line-height:1.6;display:flex;gap:8px}
+.warn-tip .wi{flex-shrink:0;font-size:14px}
+.warn-tip .wt{flex:1}
+
+#alert-banner{display:none;background:#1e6b3a;color:#fff;padding:12px 16px;font-size:12px;position:sticky;top:0;z-index:150;border-radius:0 0 14px 14px}
 </style>
 </head>
 <body>
 
-<div id="alert-banner" style="display:none;background:#1e6b3a;color:#fff;padding:12px 16px;font-size:12px;position:sticky;top:0;z-index:150;border-radius:0 0 14px 14px;margin-bottom:0"></div>
+<div id="alert-banner"></div>
 
 <div class="cover">
-  <h1>💍 민석 & 신부의 신혼여행</h1>
-  <div class="dates">2025. 07. 18 (토) ~ 07. 28 (화) · 10박 11일</div>
+  <h1>💍 민석 & 은경의 신혼여행</h1>
+  <div class="dates">2026. 07. 18 (토) ~ 07. 28 (화) · 10박 11일</div>
   <div class="cities">
     <span class="city-tag">🇪🇸 바르셀로나</span>
     <span class="city-tag">🌊 마요르카</span>
@@ -111,7 +121,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="dday-row">
     <div class="dday-box"><span id="dday-num">D-?</span><small>출발까지</small></div>
-    <div class="dday-box"><span id="trip-date">7.18</span><small>출발일</small></div>
+    <div class="dday-box"><span>7.18</span><small>출발일</small></div>
   </div>
   <div style="margin-top:12px">
     <button id="notif-btn" onclick="requestNotifPermission()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:#fff;border-radius:20px;padding:7px 18px;font-size:12px;cursor:pointer;font-weight:500">🔔 출국 알람 설정</button>
@@ -142,32 +152,69 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <div id="tab-info" class="section">
   <p class="section-title">📋 유의사항 & 정보</p>
-  <div class="warn-item">소매치기 주의 — 바르셀로나 람블라스·지하철 특히 조심</div>
-  <div class="warn-item">7월 한낮 35~40°C · 자외선 차단제·물 필수</div>
-  <div class="warn-item">스페인 시에스타(14~17시) 일부 상점 닫힘</div>
-  <div class="warn-item">마요르카 인기 해변 성수기 자리 경쟁 심함 · 이른 방문 추천</div>
-  <div class="warn-item">유럽형 플러그(C/F타입) 어댑터 필수</div>
-  <div class="info-card" style="margin-top:12px">
+
+  <div class="warn-section">
+    <div class="warn-section-title">🇪🇸 바르셀로나</div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>소매치기 최다 도시</b> — 한국인 피해 90%가 소매치기. 람블라스 거리·지하철·사그라다 파밀리아 주변·해변에서 특히 집중 발생</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>지하철 문 열릴 때</b> 순간적으로 소매치기 많이 발생. 문 앞에서 가방 앞으로 메고 지퍼 손으로 잡기</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>가짜 경찰 사기</b> — 사복 경찰이라며 지갑 요구하면 거부. 진짜 경찰은 신분증만 확인, 지갑 절대 요구 안 함</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>새똥·초콜릿 뿌리기 수법</b> — 옷에 뭔가 묻었다며 닦아주려는 사람 경계. 그 사이 가방 훔쳐감</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>해변 귀중품</b> — 수영 중 두고 간 짐 도난 빈번. 귀중품은 숙소에 두고 가기</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>관광세</b> — 숙박 1박당 €4(도시세) + 호텔 등급별 광역세 추가 부과. 4성급 €1.7 별도</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt"><b>일요일</b>에는 대부분 쇼핑몰·상점 닫힘. 필요한 쇼핑은 토요일에 미리!</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">식당은 저녁 <b>8시 이후</b> 오픈. 시에스타(14~17시) 문 닫는 곳 많음</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">지하철 <b>T-Casual</b>(10회권) 구매하면 지하철·버스 모두 사용 가능하고 현금 안 들고 다녀도 됨</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">7월 한낮 <b>35~40°C</b>. 자외선 차단제·물 필수. 한낮 야외 활동 최소화</span></div>
+  </div>
+
+  <div class="warn-section">
+    <div class="warn-section-title">🌊 마요르카</div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>렌트카 산악도로 주의</b> — 북서부 구불구불한 절벽 도로 많음. 좁은 길에서 급커브 주의. 여유있게 천천히 운전</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>주차 규정 엄격</b> — 무단 주차 시 과태료 또는 견인. 주차장 사전 확인 필수</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>Caló del Moro</b> 성수기 자리 경쟁 극심 — 오전 9시 이전 도착 추천. 늦으면 주차도 힘듦</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>포르멘토르 규제</b> — 성수기 개인 차량 접근 제한 구간 있음. 셔틀버스 운영 여부 사전 확인 필요</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">렌트카는 <b>공항 픽업</b>이 편리. 팔마 공항 규모 작아 헤맬 걱정 없음</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">국제운전면허증 + 한국면허증 + 여권 <b>3가지 모두</b> 지참 필수</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">소예르 빈티지 열차는 인기 많아 <b>사전 예약</b> 강력 추천</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">7월 성수기 해변 주변 레스토랑 가격 높음. 팔마 시내에서 식사하는 게 가성비 좋음</span></div>
+  </div>
+
+  <div class="warn-section">
+    <div class="warn-section-title">🇵🇹 포르투</div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>히베이라(Ribeira) 지구</b> 소매치기 주의 — 관광객 밀집 구역. 크로스백은 앞으로, 스마트폰 스트랩 사용 추천</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>식당 애피타이저 유료</b> — 빵·올리브·치즈 자동으로 갖다 줌. 원하지 않으면 바로 정중히 거절해야 청구됨</span></div>
+    <div class="warn-item"><span class="wi">⚠️</span><span class="wt"><b>렐루 서점 입장료</b> — €8 별도. 서점에서 책 구매 시 금액 차감됨</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">포르투는 전반적으로 바르셀로나보다 <b>훨씬 안전</b>하고 물가도 저렴한 편</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">저녁식사는 <b>오후 8시 이후</b>. 팁은 필수 아니지만 만족 시 5~10% 정도</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt"><b>동 루이스 다리 상층</b>이 뷰 훨씬 좋음. 야경은 모루정원에서 보는 것 추천</span></div>
+    <div class="warn-tip"><span class="wi">💡</span><span class="wt">갑자기 비 올 수 있음 — <b>접이식 우산</b> 항상 챙기기</span></div>
+  </div>
+
+  <div class="info-card">
     <h3>📋 출발 전 체크리스트</h3>
     <div class="info-item"><span class="info-label">여권</span><span class="info-val">유효기간 6개월 이상 확인</span></div>
+    <div class="info-item"><span class="info-label">국제면허증</span><span class="info-val">마요르카 렌트카용 · 발급일로부터 6개월 유효</span></div>
     <div class="info-item"><span class="info-label">유심</span><span class="info-val">유럽 로밍 유심 or 포켓와이파이</span></div>
     <div class="info-item"><span class="info-label">환전</span><span class="info-val">유로 현금 소액 (카드 대부분 가능)</span></div>
     <div class="info-item"><span class="info-label">여행보험</span><span class="info-val">출발 전 가입 확인</span></div>
-    <div class="info-item"><span class="info-label">렌트카</span><span class="info-val">마요르카 렌트카 사전 예약</span></div>
-    <div class="info-item"><span class="info-label">예약</span><span class="info-val">사그라다 파밀리아·구엘 공원 사전 예약 필수</span></div>
+    <div class="info-item"><span class="info-label">사전예약</span><span class="info-val">사그라다 파밀리아·구엘 공원·소예르 열차·드라크 동굴</span></div>
+    <div class="info-item"><span class="info-label">어댑터</span><span class="info-val">유럽형 C/F타입 · 스페인·포르투갈 동일</span></div>
+  </div>
+    <div class="info-item"><span class="info-label">이심 (eSIM)</span><span class="info-val"><a href="https://experiences.myrealtrip.com/products/4274431" target="_blank" style="color:#1a5276;font-weight:500;text-decoration:underline">📱 마이리얼트립 eSIM 구매 링크</a><br><span style="color:#9ca3af">구매 예정 · 출발 전 설치 필요</span></span></div>
+    <div class="info-item"><span class="info-label">수하물</span><span class="info-val">터키항공(귀국편) · 1인당: 소형가방 1개(앞좌석 하단) + 기내 8kg + 위탁 23kg · 2인 각각 적용</span></div>
   </div>
   <div class="info-card">
-    <h3>✈️ 이동 정보</h3>
-    <div class="info-item"><span class="info-label">인천→BCN</span><span class="info-val">EK323 · 07.18 23:55 ICN → 두바이 경유 → EK185 · 07.19 13:25 BCN 도착</span></div>
-    <div class="info-item"><span class="info-label">BCN→MAL</span><span class="info-val">국내선 약 50분 · 항공편 추가 예정</span></div>
-    <div class="info-item"><span class="info-label">MAL→OPO</span><span class="info-val">항공편 추가 예정</span></div>
-    <div class="info-item"><span class="info-label">OPO→인천</span><span class="info-val">귀국 항공편 추가 예정</span></div>
+    <h3>✈️ 항공편</h3>
+    <div class="info-item"><span class="info-label">인천→BCN</span><span class="info-val">에미레이트 EK323 · 07.18 23:55 출발 → 두바이 경유 → EK185 → 07.19 13:25 BCN 도착<br><span style="color:#9ca3af">예약번호 R86KPB · 민석 67C / 은경 67B (넓은 발밑 공간)</span></span></div>
+    <div class="info-item"><span class="info-label">BCN→MAL</span><span class="info-val">에어유로파 UX6007 · 07.22 08:40 BCN → 09:25 PMI · 45분<br><span style="color:#9ca3af">공항 06:40까지 도착</span></span></div>
+    <div class="info-item"><span class="info-label">MAL→OPO</span><span class="info-val">라이언에어 FR6751 · 07.25 15:30 PMI → 16:25 OPO · 1시간 55분<br><span style="color:#9ca3af">예약번호 XU4G7C · 공항 13:30까지 도착</span></span></div>
+    <div class="info-item"><span class="info-label">OPO→인천</span><span class="info-val">터키항공 · 07.28 16:40 OPO → 23:25 이스탄불 → 01:50 출발 → 07.29 17:40 인천 도착</span></div>
   </div>
   <div class="info-card">
-    <h3>🚌 공항 ↔ 시내</h3>
-    <div class="info-item"><span class="info-label">바르셀로나</span><span class="info-val">지하철 L9 Sud · 약 30분 · €5.15</span></div>
-    <div class="info-item"><span class="info-label">마요르카</span><span class="info-val">렌트카 픽업 또는 택시</span></div>
-    <div class="info-item"><span class="info-label">포르투</span><span class="info-val">지하철 E선 · 약 35분 · €2.15</span></div>
+    <h3>🏨 숙소</h3>
+    <div class="info-item"><span class="info-label">바르셀로나</span><span class="info-val">H10 메트로폴리탄</span></div>
+    <div class="info-item"><span class="info-label">마요르카</span><span class="info-val">캡베르멜 (Cap Vermell)</span></div>
+    <div class="info-item"><span class="info-label">포르투</span><span class="info-val">포르투 리버 호텔</span></div>
   </div>
   <div class="info-card">
     <h3>📞 긴급 연락처</h3>
@@ -175,12 +222,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="info-item"><span class="info-label">포르투갈 경찰</span><span class="info-val">112</span></div>
     <div class="info-item"><span class="info-label">주스페인 대사관</span><span class="info-val">+34-91-353-2000</span></div>
     <div class="info-item"><span class="info-label">주포르투갈 대사관</span><span class="info-val">+351-21-793-7200</span></div>
+    <div class="info-item"><span class="info-label">영사콜센터</span><span class="info-val">+82-2-3210-0404 (해외에서 무료앱 이용 가능)</span></div>
   </div>
 </div>
 
-<!-- Day modal -->
 <div class="modal-overlay" id="modal" onclick="closeModal(event)">
-  <div class="modal" id="modal-inner">
+  <div class="modal">
     <div class="modal-header">
       <button class="modal-close" onclick="closeModalBtn()">✕</button>
       <h2 id="modal-title"></h2>
@@ -198,163 +245,169 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </nav>
 
 <script>
-const TRIP_START = new Date('2025-07-18');
+const TRIP_START = new Date('2026-07-18');
 
 const days = [
-  {day:1,date:'07.18',dow:'토',city:'바르셀로나',badge:'badge-bcn',title:'바르셀로나 도착',summary:'인천 출발 · 공항 이동 · 체크인',
+  {day:1,date:'07.18',dow:'토',city:'바르셀로나',badge:'badge-bcn',title:'바르셀로나 도착',summary:'인천 출발 23:55 · EK323',
    timeline:[
-    {time:'23:55',place:'인천국제공항 출발',desc:'EK323 (A380) · 두바이 경유 → EK185 · 바르셀로나 도착 07.19 13:25',map:'https://maps.google.com/?q=Incheon+International+Airport'},
-    {time:'현지도착',place:'바르셀로나 엘프라트 공항',desc:'입국 심사 후 지하철 L9 Sud 탑승 → 시내',map:'https://maps.google.com/?q=Barcelona+El+Prat+Airport'},
-    {time:'체크인',place:'H10 메트로폴리탄',desc:'바르셀로나 시내 중심 · 그라시아 거리 근처',map:'https://maps.google.com/?q=H10+Metropolitan+Barcelona',req:true},
+    {time:'23:55',place:'인천국제공항 출발',desc:'EK323 (A380) · 두바이 경유 → EK185 · 바르셀로나 07.19 13:25 도착',map:'https://maps.google.com/?q=Incheon+International+Airport'},
+  ]},
+  {day:2,date:'07.19',dow:'일',city:'바르셀로나',badge:'badge-bcn',title:'바르셀로나 도착 & 체크인',summary:'13:25 BCN 도착 · H10 메트로폴리탄',
+   timeline:[
+    {time:'13:25',place:'바르셀로나 엘프라트 공항',desc:'EK185 도착 · 입국 심사 후 지하철 L9 Sud 탑승',map:'https://maps.google.com/?q=Barcelona+El+Prat+Airport'},
+    {time:'체크인',place:'H10 메트로폴리탄',desc:'그라시아 거리 근처 · 체크인 시간 확인',map:'https://maps.google.com/?q=H10+Metropolitan+Barcelona',req:true},
     {time:'저녁',place:'첫날 저녁',desc:'맛집 추가 예정 · 가벼운 타파스 추천',map:''},
   ]},
-  {day:2,date:'07.19',dow:'일',city:'바르셀로나',badge:'badge-bcn',title:'가우디 투어',summary:'사그라다 파밀리아 · 구엘 공원',
+  {day:3,date:'07.20',dow:'월',city:'바르셀로나',badge:'badge-bcn',title:'가우디 투어 & 사그라다 파밀리아',summary:'07:30 Ppg. de Gràcia 집합 · 투어 · 사파 입장',
    timeline:[
-    {time:'09:00',place:'사그라다 파밀리아',desc:'사전 예약 필수 · 약 1.5~2시간',map:'https://maps.google.com/?q=Sagrada+Familia+Barcelona',req:true},
-    {time:'11:30',place:'까사 비센스',desc:'가우디 초기 작품 · 도보 이동',map:'https://maps.google.com/?q=Casa+Vicens+Barcelona'},
-    {time:'13:00',place:'점심',desc:'맛집 추가 예정',map:''},
-    {time:'15:00',place:'구엘 공원',desc:'사전 예약 필수 · 모자이크 테라스 포토스팟',map:'https://maps.google.com/?q=Park+Guell+Barcelona',req:true},
+    {time:'07:30',place:'집합 — Ppg. de Gràcia 87',desc:'📍 투어 집합 장소 · 옵션 B 예약 · €71/인 현금 준비\nMy Top Tour (soporte@mytoptour.es)',map:'https://maps.google.com/?q=Passeig+de+Gracia+87+Barcelona',req:true},
+    {time:'07:30\n~13:40',place:'가우디 투어 진행',desc:'옵션 B · 약 6시간 진행',map:'https://maps.google.com/?q=Passeig+de+Gracia+87+Barcelona'},
+    {time:'13:40\n~14:30',place:'점심식사',desc:'투어 종료 후 근처 맛집',map:'https://maps.google.com/?q=Sagrada+Familia+Barcelona'},
+    {time:'14:30',place:'사그라다 파밀리아 입장',desc:'🎫 티켓 번호: T-AG89-222362\n성인 2인 · 오디오 가이드 포함 · €44.99×2 = €89.98\n주문번호: 401779999683',map:'https://maps.google.com/?q=Sagrada+Familia+Barcelona',req:true},
     {time:'저녁',place:'그라시아 거리',desc:'파세이그 데 그라시아 주변 저녁',map:'https://maps.google.com/?q=Passeig+de+Gracia+Barcelona'},
   ]},
-  {day:3,date:'07.20',dow:'일',city:'바르셀로나',badge:'badge-bcn',title:'고딕 지구 & 해변',summary:'보케리아 시장 · 바르셀로네타 해변',
+  {day:4,date:'07.21',dow:'화',city:'바르셀로나',badge:'badge-bcn',title:'고딕 지구 & 해변',summary:'보케리아 시장 · 바르셀로네타 해변',
    timeline:[
-    {time:'10:00',place:'라 보케리아 시장',desc:'현지 식재료·과일·먹거리 구경',map:'https://maps.google.com/?q=La+Boqueria+Barcelona'},
-    {time:'11:30',place:'고딕 지구 산책',desc:'구시가 골목 탐방 · 피카소 미술관 근처',map:'https://maps.google.com/?q=Gothic+Quarter+Barcelona'},
+    {time:'10:00',place:'라 보케리아 시장',desc:'오전 방문 추천 · 덜 붐빔',map:'https://maps.google.com/?q=La+Boqueria+Barcelona'},
+    {time:'11:30',place:'고딕 지구 산책',desc:'구시가 골목 탐방 · 소매치기 주의',map:'https://maps.google.com/?q=Gothic+Quarter+Barcelona'},
     {time:'13:00',place:'점심',desc:'맛집 추가 예정',map:''},
-    {time:'15:00',place:'바르셀로네타 해변',desc:'지중해 수영 & 휴식',map:'https://maps.google.com/?q=Barceloneta+Beach'},
+    {time:'15:00',place:'바르셀로네타 해변',desc:'수영 & 휴식 · 귀중품 숙소에 두고 가기',map:'https://maps.google.com/?q=Barceloneta+Beach'},
     {time:'저녁',place:'해산물 저녁',desc:'Puertecillo Born 또는 El Rey de la Gamba 추천',map:'https://maps.google.com/?q=El+Rey+de+la+Gamba+Barcelona'},
   ]},
-  {day:4,date:'07.21',dow:'월',city:'바르셀로나',badge:'badge-bcn',title:'바르셀로나 자유 일정',summary:'몬주익 · 캄 노우 · 쇼핑',
+  {day:5,date:'07.22',dow:'수',city:'바르셀로나',badge:'badge-bcn',title:'바르셀로나 자유 일정',summary:'몬주익 · 캄 노우 · 쇼핑',
    timeline:[
-    {time:'오전',place:'몬주익 마법의 분수',desc:'야경 명소 · 저녁에도 방문 가능',map:'https://maps.google.com/?q=Magic+Fountain+Montjuic+Barcelona'},
-    {time:'오후',place:'캄 노우',desc:'FC 바르셀로나 홈구장 투어',map:'https://maps.google.com/?q=Camp+Nou+Barcelona'},
-    {time:'저녁',place:'El Nacional Barcelona',desc:'바르셀로나 대표 복합 식당가 · 분위기 최고',map:'https://maps.google.com/?q=El+Nacional+Barcelona'},
+    {time:'오전',place:'캄 노우 투어',desc:'FC 바르셀로나 홈구장',map:'https://maps.google.com/?q=Camp+Nou+Barcelona'},
+    {time:'오후',place:'쇼핑 (일요일 전 마지막 기회)',desc:'El Corte Inglés · Arenas de Barcelona',map:'https://maps.google.com/?q=El+Corte+Ingles+Placa+Catalunya+Barcelona'},
+    {time:'저녁',place:'몬주익 마법의 분수',desc:'야간 분수쇼 · El Nacional Barcelona 저녁 추천',map:'https://maps.google.com/?q=Magic+Fountain+Montjuic+Barcelona'},
   ]},
-  {day:5,date:'07.22',dow:'화',city:'마요르카',badge:'badge-mal',title:'마요르카 이동',summary:'국내선 · 렌트카 · 팔마 도착',
+  {day:6,date:'07.23',dow:'목',city:'마요르카',badge:'badge-mal',title:'마요르카 이동',summary:'BCN 06:40 공항 도착 · 08:40 출발 · 09:25 팔마',
    timeline:[
-    {time:'오전',place:'공항 이동 & 탑승',desc:'BCN → PMI 국내선 · 항공편 추가 예정',map:'https://maps.google.com/?q=Barcelona+El+Prat+Airport',req:true},
-    {time:'도착',place:'팔마데마요르카 국제공항',desc:'렌트카 픽업',map:'https://maps.google.com/?q=Palma+de+Mallorca+Airport'},
-    {time:'오후',place:'팔마 대성당',desc:'바다 옆 고딕 양식 대성당 · 가우디 내부 장식',map:'https://maps.google.com/?q=Catedral+de+Mallorca'},
-    {time:'체크인',place:'캡베르멜 (Cap Vermell)',desc:'마요르카 · 숙소',map:'https://maps.google.com/?q=Cap+Vermell+Grand+Hotel+Mallorca',req:true},
+    {time:'06:40',place:'바르셀로나 엘프라트 공항',desc:'2시간 전 도착 · 수속 및 탑승 준비',map:'https://maps.google.com/?q=Barcelona+El+Prat+Airport',req:true},
+    {time:'08:40',place:'BCN 출발',desc:'BCN → PMI · 비행시간 약 45분',map:'https://maps.google.com/?q=Barcelona+El+Prat+Airport'},
+    {time:'09:25',place:'팔마데마요르카 국제공항 도착',desc:'렌트카 픽업 · 국제면허증+한국면허증+여권 필수',map:'https://maps.google.com/?q=Palma+de+Mallorca+Airport'},
+    {time:'오후',place:'팔마 대성당',desc:'바다 옆 고딕 대성당 · 가우디 내부 장식',map:'https://maps.google.com/?q=Catedral+de+Mallorca'},
+    {time:'체크인',place:'캡베르멜 (Cap Vermell)',desc:'마요르카 숙소',map:'https://maps.google.com/?q=Cap+Vermell+Grand+Hotel+Mallorca',req:true},
     {time:'저녁',place:'팔마 구시가 저녁',desc:'맛집 추가 예정',map:''},
   ]},
-  {day:6,date:'07.23',dow:'수',city:'마요르카',badge:'badge-mal',title:'마요르카 북부 탐방',summary:'소예르 열차 · Port de Sóller',
+  {day:7,date:'07.24',dow:'금',city:'마요르카',badge:'badge-mal',title:'소예르 열차 & 동굴',summary:'빈티지 열차 · Cuevas del Drach',
    timeline:[
-    {time:'09:00',place:'Train Sóller Station',desc:'팔마 → 소예르 빈티지 열차 · 약 1시간 · 예약 추천',map:'https://maps.google.com/?q=Soller+Train+Station+Mallorca',req:true},
+    {time:'09:00',place:'Train Sóller Station',desc:'팔마 → 소예르 빈티지 열차 약 1시간 · 사전 예약 필수',map:'https://maps.google.com/?q=Soller+Train+Station+Mallorca',req:true},
     {time:'11:00',place:'Port de Sóller',desc:'아담한 항구 마을 · 수영 가능',map:'https://maps.google.com/?q=Port+de+Soller+Mallorca'},
-    {time:'13:00',place:'점심',desc:'항구 식당가 추천',map:''},
-    {time:'15:00',place:'Cuevas del Drach',desc:'용의 동굴 · 지하 호수 · 예약 필수',map:'https://maps.google.com/?q=Cuevas+del+Drach+Mallorca',req:true},
+    {time:'13:00',place:'점심',desc:'항구 식당가',map:''},
+    {time:'15:00',place:'Cuevas del Drach',desc:'용의 동굴 · 지하 호수 · 예약 필수 · 비포장 지형 편한 신발 착용',map:'https://maps.google.com/?q=Cuevas+del+Drach+Mallorca',req:true},
     {time:'저녁',place:'저녁 식사',desc:'맛집 추가 예정',map:''},
   ]},
-  {day:7,date:'07.24',dow:'목',city:'마요르카',badge:'badge-mal',title:'마요르카 해변 & 자유',summary:'Caló del Moro · 자유 일정',
+  {day:8,date:'07.25',dow:'토',city:'마요르카',badge:'badge-mal',title:'Caló del Moro & 자유',summary:'비경 해변 · 자유 일정',
    timeline:[
-    {time:'09:00',place:'Caló del Moro',desc:'마요르카 최고 비경 해변 · 이른 방문 필수(성수기 자리 경쟁)',map:'https://maps.google.com/?q=Calo+del+Moro+Mallorca'},
-    {time:'오후',place:'자유 일정',desc:'추가 해변 또는 팔마 시내 쇼핑',map:''},
+    {time:'08:30',place:'Caló del Moro',desc:'성수기 오전 9시 전 도착 필수 · 주차 포함 자리 경쟁 극심',map:'https://maps.google.com/?q=Calo+del+Moro+Mallorca'},
+    {time:'오후',place:'자유 일정',desc:'추가 해변 또는 팔마 시내',map:''},
     {time:'저녁',place:'저녁 식사',desc:'맛집 추가 예정',map:''},
   ]},
-  {day:8,date:'07.25',dow:'금',city:'포르투',badge:'badge-por',title:'포르투 이동 & 도착',summary:'MAL → OPO · 포르투 첫날',
+  {day:9,date:'07.26',dow:'일',city:'포르투',badge:'badge-por',title:'포르투 이동 & 도착',summary:'MAL 13:30 공항 도착 · 15:30 라이언에어 출발',
    timeline:[
-    {time:'오전',place:'공항 이동 & 탑승',desc:'MAL → OPO · 항공편 추가 예정',map:'https://maps.google.com/?q=Palma+de+Mallorca+Airport',req:true},
-    {time:'도착',place:'포르투 공항',desc:'지하철 E선 이용 시내 이동',map:'https://maps.google.com/?q=Porto+Airport'},
-    {time:'체크인',place:'포르투 리버 호텔',desc:'포르투 · 도루강 뷰',map:'https://maps.google.com/?q=Porto+River+Hotel',req:true},
-    {time:'저녁',place:'히베이라 광장',desc:'도루강변 야경 & 저녁',map:'https://maps.google.com/?q=Ribeira+Porto'},
+    {time:'13:30',place:'팔마데마요르카 국제공항',desc:'라이언에어 2시간 전 도착 · 수속',map:'https://maps.google.com/?q=Palma+de+Mallorca+Airport',req:true},
+    {time:'15:30',place:'MAL 출발',desc:'라이언에어 · MAL → OPO',map:'https://maps.google.com/?q=Palma+de+Mallorca+Airport'},
+    {time:'도착',place:'포르투 공항',desc:'지하철 E선 이용 시내 이동 · 약 35분 €2.15',map:'https://maps.google.com/?q=Porto+Airport'},
+    {time:'체크인',place:'포르투 리버 호텔',desc:'도루강 뷰',map:'https://maps.google.com/?q=Porto+River+Hotel',req:true},
+    {time:'저녁',place:'히베이라 광장',desc:'도루강변 야경 & 저녁 · 소매치기 주의',map:'https://maps.google.com/?q=Ribeira+Porto'},
   ]},
-  {day:9,date:'07.26',dow:'토',city:'포르투',badge:'badge-por',title:'포르투 구시가',summary:'동 루이스 다리 · 와이너리',
+  {day:10,date:'07.27',dow:'월',city:'포르투',badge:'badge-por',title:'포르투 구시가',summary:'동 루이스 다리 · 렐루 서점 · 와이너리',
    timeline:[
-    {time:'10:00',place:'동 루이스 1세 다리',desc:'도루강 절경 · 상층 도보 추천',map:'https://maps.google.com/?q=Dom+Luis+Bridge+Porto'},
-    {time:'11:30',place:'렐루 서점',desc:'세계에서 가장 아름다운 서점 중 하나',map:'https://maps.google.com/?q=Livraria+Lello+Porto'},
-    {time:'13:00',place:'점심',desc:'프란세지냐 추천 맛집',map:''},
+    {time:'10:00',place:'동 루이스 1세 다리',desc:'상층 도보 뷰 훨씬 좋음 · 도루강 절경',map:'https://maps.google.com/?q=Dom+Luis+Bridge+Porto'},
+    {time:'11:30',place:'렐루 서점',desc:'입장료 €8 (책 구매 시 차감) · 세계 아름다운 서점',map:'https://maps.google.com/?q=Livraria+Lello+Porto'},
+    {time:'13:00',place:'점심',desc:'프란세지냐 추천',map:''},
     {time:'15:00',place:'가이아 와이너리 투어',desc:'포트와인 시음 · 예약 추천',map:'https://maps.google.com/?q=Vila+Nova+de+Gaia+Porto',req:true},
-    {time:'저녁',place:'저녁 식사',desc:'맛집 추가 예정',map:''},
+    {time:'저녁',place:'모루정원 야경',desc:'포르투 야경 1위 · 와인+간식 피크닉 추천',map:'https://maps.google.com/?q=Jardim+do+Morro+Porto'},
   ]},
-  {day:10,date:'07.27',dow:'일',city:'포르투',badge:'badge-por',title:'포르투 마지막 날',summary:'볼량 시장 · 기념품 쇼핑',
+  {day:11,date:'07.28',dow:'화',city:'포르투',badge:'badge-por',title:'귀국',summary:'볼량 시장 · 16:40 OPO 출발 · 이스탄불 경유',
    timeline:[
-    {time:'오전',place:'볼량 시장',desc:'현지 기념품 & 마지막 쇼핑',map:'https://maps.google.com/?q=Mercado+do+Bolhão+Porto'},
+    {time:'오전',place:'볼량 시장',desc:'마지막 기념품 쇼핑',map:'https://maps.google.com/?q=Mercado+do+Bolhão+Porto'},
     {time:'점심',place:'마지막 포르투 점심',desc:'맛집 추가 예정',map:''},
-    {time:'오후',place:'자유 일정',desc:'추가 예정',map:''},
-    {time:'저녁',place:'귀국 준비',desc:'짐 정리 · 공항 이동 준비',map:''},
-  ]},
-  {day:11,date:'07.28',dow:'월',city:'포르투',badge:'badge-por',title:'귀국',summary:'OPO 출발 · 인천 도착',
-   timeline:[
-    {time:'출발',place:'포르투 공항 출발',desc:'귀국 항공편 추가 예정',map:'https://maps.google.com/?q=Porto+Airport',req:true},
-    {time:'도착',place:'인천국제공항',desc:'입국 심사 및 수하물 수취',map:''},
+    {time:'14:30',place:'포르투 공항 출발 준비',desc:'2시간 전 공항 도착 · 수하물 확인 (위탁 23kg, 기내 8kg, 소형가방 각 1개)',map:'https://maps.google.com/?q=Porto+Airport',req:true},
+    {time:'16:40',place:'OPO 출발',desc:'터키항공 · OPO → 이스탄불',map:'https://maps.google.com/?q=Porto+Airport'},
+    {time:'23:25',place:'이스탄불 도착',desc:'경유 대기 · 01:50 이스탄불 출발',map:''},
+    {time:'01:50\n(07.29)',place:'이스탄불 출발',desc:'이스탄불 → 인천',map:''},
+    {time:'17:40\n(07.29)',place:'인천국제공항 도착',desc:'입국 심사 및 수하물 수취 · 수고했어요 💍',map:'https://maps.google.com/?q=Incheon+International+Airport'},
   ]},
 ];
 
 const restos = [
-  // 바르셀로나 - 식사
-  {city:'bcn',type:'food',name:'비아나',en:'Viana',tags:['퓨전','고급'],menu:'추가 예정',price:'₩₩',rating:'4.8',map:'https://maps.google.com/?q=Viana+Barcelona'},
-  {city:'bcn',type:'food',name:'Anxoita Bodega',en:'',tags:['음식점'],menu:'추가 예정',price:'€€',rating:'4.7',map:'https://maps.google.com/?q=Anxoita+Bodega+Barcelona'},
-  {city:'bcn',type:'food',name:'FOC Barceloneta',en:'',tags:['남미요리','해변근처'],menu:'추가 예정',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=FOC+Barceloneta'},
-  {city:'bcn',type:'food',name:'NAP',en:'',tags:['피자'],menu:'나폴리식 피자',price:'€',rating:'4.6',map:'https://maps.google.com/?q=NAP+pizza+Barcelona'},
-  {city:'bcn',type:'food',name:'Bivio Steak House',en:'',tags:['스테이크','브라세리'],menu:'스테이크',price:'₩₩',rating:'4.6',map:'https://maps.google.com/?q=Bivio+Steak+House+Barcelona'},
-  {city:'bcn',type:'food',name:'Restaurant Can Ros',en:'',tags:['지중해','해산물'],menu:'추가 예정',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=Restaurant+Can+Ros+Barcelona'},
-  {city:'bcn',type:'food',name:'Can Majó',en:'',tags:['해산물','지중해'],menu:'추가 예정',price:'₩₩',rating:'4.3',map:'https://maps.google.com/?q=Can+Majo+Barcelona'},
-  {city:'bcn',type:'food',name:'La Mar Salada',en:'',tags:['지중해','해산물'],menu:'추가 예정',price:'₩₩',rating:'4.3',map:'https://maps.google.com/?q=La+Mar+Salada+Barcelona'},
-  {city:'bcn',type:'food',name:'Bar Cal Chusco',en:'',tags:['타파스바'],menu:'추가 예정',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Bar+Cal+Chusco+Barcelona'},
-  {city:'bcn',type:'food',name:'Paco Alcalde',en:'',tags:['음식점'],menu:'추가 예정',price:'€€',rating:'4.3',map:'https://maps.google.com/?q=Paco+Alcalde+Barcelona'},
-  {city:'bcn',type:'food',name:'El Rey de la Gamba',en:'1972년부터',tags:['해산물','감바스'],menu:'감바스',price:'€€',rating:'4.2',map:'https://maps.google.com/?q=El+Rey+de+la+Gamba+Barcelona'},
-  {city:'bcn',type:'food',name:'Casa Lolea',en:'',tags:['음식점','상그리아'],menu:'추가 예정',price:'€€',rating:'4.6',map:'https://maps.google.com/?q=Casa+Lolea+Barcelona'},
-  {city:'bcn',type:'food',name:'Bar Lobo',en:'',tags:['타파스바'],menu:'타파스',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Bar+Lobo+Barcelona'},
-  {city:'bcn',type:'food',name:'Vinitus Madrid-Barcelona',en:'',tags:['음식점'],menu:'추가 예정',price:'€€',rating:'4.6',map:'https://maps.google.com/?q=Vinitus+Madrid+Barcelona'},
-  {city:'bcn',type:'food',name:'Cerveceria Catalana',en:'',tags:['타파스','인기'],menu:'타파스',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=Cerveceria+Catalana+Barcelona'},
-  {city:'bcn',type:'food',name:"O'Retorno",en:'',tags:['갈리시아','스페인'],menu:'추가 예정',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=O+Retorno+Barcelona'},
-  {city:'bcn',type:'food',name:'VIGO Restaurant Tapes',en:'',tags:['스페인','타파스'],menu:'추가 예정',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=VIGO+Restaurant+Tapes+Barcelona'},
-  {city:'bcn',type:'food',name:'Puertecillo Born',en:'',tags:['해산물'],menu:'해산물',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Puertecillo+Born+Barcelona'},
-  {city:'bcn',type:'food',name:'Buenos Aires Grill',en:'',tags:['아르헨티나','스테이크'],menu:'추가 예정',price:'₩₩₩',rating:'4.5',map:'https://maps.google.com/?q=Buenos+Aires+Grill+Barcelona'},
-  {city:'bcn',type:'food',name:'Bodega Joan',en:'',tags:['그릴'],menu:'추가 예정',price:'€€',rating:'4.3',map:'https://maps.google.com/?q=Bodega+Joan+Barcelona'},
-  {city:'bcn',type:'food',name:'Vinitus',en:'',tags:['타파스'],menu:'타파스',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Vinitus+Barcelona'},
-  {city:'bcn',type:'food',name:'El Nacional Barcelona',en:'',tags:['스페인','복합식당'],menu:'다양',price:'₩₩',rating:'4.4',map:'https://maps.google.com/?q=El+Nacional+Barcelona'},
-  {city:'bcn',type:'food',name:'시우다드 콘달',en:'Ciudad Condal',tags:['타파스바','인기'],menu:'타파스',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=Cerveceria+Ciudad+Condal+Barcelona'},
-  {city:'bcn',type:'food',name:'Les Quinze Nits',en:'',tags:['카탈로니아'],menu:'추가 예정',price:'€€',rating:'4.2',map:'https://maps.google.com/?q=Les+Quinze+Nits+Barcelona'},
-  {city:'bcn',type:'food',name:'Surf House Barcelona',en:'',tags:['음식점','해변'],menu:'추가 예정',price:'€',rating:'4.3',map:'https://maps.google.com/?q=Surf+House+Barcelona'},
-  {city:'bcn',type:'food',name:'Pincho J',en:'',tags:['타파스','핀초'],menu:'핀초',price:'€',rating:'4.0',map:'https://maps.google.com/?q=Pincho+J+Barcelona'},
-  {city:'bcn',type:'food',name:'La Tasqueta de Blai',en:'',tags:['타파스','핀초'],menu:'핀초',price:'€',rating:'4.5',map:'https://maps.google.com/?q=La+Tasqueta+de+Blai+Barcelona'},
-  {city:'bcn',type:'food',name:'Bun Bo Barcelona',en:'Vietnamese',tags:['베트남','쌀국수'],menu:'쌀국수',price:'€',rating:'4.3',map:'https://maps.google.com/?q=Bun+Bo+Barcelona'},
-  // 바르셀로나 - 카페/디저트
-  {city:'bcn',type:'cafe',name:'호프만 베이커리',en:'Hofmann Bakery',tags:['케이크','베이커리'],menu:'크루아상·케이크',price:'€',rating:'4.4',map:'https://maps.google.com/?q=Hofmann+Bakery+Barcelona'},
-  {city:'bcn',type:'cafe',name:'추레리아 라이에타나',en:'Churreria Laietana',tags:['추로스'],menu:'추로스+핫초코',price:'₩',rating:'4.7',map:'https://maps.google.com/?q=Churreria+Laietana+Barcelona'},
-  {city:'bcn',type:'cafe',name:'그란자 둘시네아',en:'Granja Dulcinea',tags:['초콜릿','카페'],menu:'핫초코',price:'€',rating:'4.2',map:'https://maps.google.com/?q=Granja+Dulcinea+Barcelona'},
-  {city:'bcn',type:'cafe',name:'추레리아 마누엘 산 로만',en:'Churrería Manuel San Román',tags:['추로스'],menu:'추로스',price:'₩',rating:'4.5',map:'https://maps.google.com/?q=Churreria+Manuel+San+Roman+Barcelona'},
-  {city:'bcn',type:'cafe',name:'Be Chocolat Gòtic',en:'',tags:['초콜릿카페'],menu:'초콜릿 음료',price:'€',rating:'4.8',map:'https://maps.google.com/?q=Be+Chocolat+Gotic+Barcelona'},
-  {city:'bcn',type:'cafe',name:'Rocambolesc',en:'',tags:['아이스크림'],menu:'수제 아이스크림',price:'€',rating:'4.1',map:'https://maps.google.com/?q=Rocambolesc+Barcelona'},
-  {city:'bcn',type:'cafe',name:'Hidden Coffee Roasters',en:'El Born',tags:['커피','스페셜티'],menu:'에스프레소·라테',price:'€',rating:'4.4',map:'https://maps.google.com/?q=Hidden+Coffee+Roasters+El+Born+Barcelona'},
-  {city:'bcn',type:'cafe',name:'Three Marks Coffee',en:'',tags:['커피','스페셜티'],menu:'필터커피',price:'€',rating:'4.4',map:'https://maps.google.com/?q=Three+Marks+Coffee+Barcelona'},
-  {city:'bcn',type:'cafe',name:'Syra Coffee - Born',en:'',tags:['카페'],menu:'커피',price:'€',rating:'4.7',map:'https://maps.google.com/?q=Syra+Coffee+Born+Barcelona'},
-  {city:'bcn',type:'cafe',name:'Syra Coffee - Universitat',en:'',tags:['커피','스페셜티'],menu:'커피',price:'€',rating:'4.5',map:'https://maps.google.com/?q=Syra+Coffee+Universitat+Barcelona'},
-  {city:'bcn',type:'cafe',name:'Granja M. Viader',en:'',tags:['카페테리아','전통'],menu:'카카오·카페',price:'€',rating:'4.4',map:'https://maps.google.com/?q=Granja+M+Viader+Barcelona'},
+  {city:'bcn',type:'food',name:'비아나',en:'Viana',tags:['퓨전','고급'],menu:'추가 예정',price:'₩₩',rating:'4.8',map:'https://maps.google.com/?q=Viana+Barcelona',review:'https://search.naver.com/search.naver?query=비아나+바르셀로나+맛집+후기'},
+  {city:'bcn',type:'food',name:'Anxoita Bodega',en:'',tags:['음식점'],menu:'추가 예정',price:'€€',rating:'4.7',map:'https://maps.google.com/?q=Anxoita+Bodega+Barcelona',review:'https://search.naver.com/search.naver?query=Anxoita+Bodega+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'FOC Barceloneta',en:'',tags:['남미요리','해변'],menu:'추가 예정',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=FOC+Barceloneta',review:'https://search.naver.com/search.naver?query=FOC+Barceloneta+후기'},
+  {city:'bcn',type:'food',name:'NAP',en:'',tags:['피자','나폴리'],menu:'나폴리식 피자',price:'€',rating:'4.6',map:'https://maps.google.com/?q=NAP+pizza+Barcelona',review:'https://search.naver.com/search.naver?query=NAP+피자+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Bivio Steak House',en:'',tags:['스테이크','브라세리'],menu:'스테이크',price:'₩₩',rating:'4.6',map:'https://maps.google.com/?q=Bivio+Steak+House+Barcelona',review:'https://search.naver.com/search.naver?query=Bivio+Steak+House+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Restaurant Can Ros',en:'',tags:['지중해','해산물'],menu:'추가 예정',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=Restaurant+Can+Ros+Barcelona',review:'https://search.naver.com/search.naver?query=Can+Ros+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Can Majó',en:'',tags:['해산물','지중해'],menu:'해산물',price:'₩₩',rating:'4.3',map:'https://maps.google.com/?q=Can+Majo+Barcelona',review:'https://search.naver.com/search.naver?query=Can+Majo+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'La Mar Salada',en:'',tags:['지중해','해산물'],menu:'추가 예정',price:'₩₩',rating:'4.3',map:'https://maps.google.com/?q=La+Mar+Salada+Barcelona',review:'https://search.naver.com/search.naver?query=La+Mar+Salada+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Bar Cal Chusco',en:'',tags:['타파스바'],menu:'타파스',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Bar+Cal+Chusco+Barcelona',review:'https://search.naver.com/search.naver?query=Bar+Cal+Chusco+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Paco Alcalde',en:'',tags:['음식점'],menu:'추가 예정',price:'€€',rating:'4.3',map:'https://maps.google.com/?q=Paco+Alcalde+Barcelona',review:'https://search.naver.com/search.naver?query=Paco+Alcalde+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'El Rey de la Gamba',en:'1972년부터',tags:['해산물','감바스'],menu:'감바스',price:'€€',rating:'4.2',map:'https://maps.google.com/?q=El+Rey+de+la+Gamba+Barcelona',review:'https://search.naver.com/search.naver?query=El+Rey+de+la+Gamba+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Casa Lolea',en:'',tags:['음식점','상그리아'],menu:'상그리아',price:'€€',rating:'4.6',map:'https://maps.google.com/?q=Casa+Lolea+Barcelona',review:'https://search.naver.com/search.naver?query=Casa+Lolea+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Bar Lobo',en:'',tags:['타파스바'],menu:'타파스',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Bar+Lobo+Barcelona',review:'https://search.naver.com/search.naver?query=Bar+Lobo+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Vinitus Madrid-Barcelona',en:'',tags:['음식점'],menu:'추가 예정',price:'€€',rating:'4.6',map:'https://maps.google.com/?q=Vinitus+Madrid+Barcelona',review:'https://search.naver.com/search.naver?query=Vinitus+Barcelona+후기'},
+  {city:'bcn',type:'food',name:'Cerveceria Catalana',en:'',tags:['타파스','인기'],menu:'타파스',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=Cerveceria+Catalana+Barcelona',review:'https://search.naver.com/search.naver?query=Cerveceria+Catalana+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:"O'Retorno",en:'',tags:['갈리시아'],menu:'추가 예정',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=O+Retorno+Barcelona',review:'https://search.naver.com/search.naver?query=O+Retorno+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'VIGO Restaurant Tapes',en:'',tags:['스페인','타파스'],menu:'추가 예정',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=VIGO+Restaurant+Tapes+Barcelona',review:'https://search.naver.com/search.naver?query=VIGO+Restaurant+Tapes+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Puertecillo Born',en:'',tags:['해산물'],menu:'해산물',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Puertecillo+Born+Barcelona',review:'https://search.naver.com/search.naver?query=Puertecillo+Born+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Buenos Aires Grill',en:'',tags:['아르헨티나','스테이크'],menu:'스테이크',price:'₩₩₩',rating:'4.5',map:'https://maps.google.com/?q=Buenos+Aires+Grill+Barcelona',review:'https://search.naver.com/search.naver?query=Buenos+Aires+Grill+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Bodega Joan',en:'',tags:['그릴'],menu:'추가 예정',price:'€€',rating:'4.3',map:'https://maps.google.com/?q=Bodega+Joan+Barcelona',review:'https://search.naver.com/search.naver?query=Bodega+Joan+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Vinitus',en:'',tags:['타파스'],menu:'타파스',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Vinitus+Barcelona',review:'https://search.naver.com/search.naver?query=Vinitus+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'El Nacional Barcelona',en:'',tags:['스페인','복합식당'],menu:'다양',price:'₩₩',rating:'4.4',map:'https://maps.google.com/?q=El+Nacional+Barcelona',review:'https://search.naver.com/search.naver?query=El+Nacional+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'시우다드 콘달',en:'Ciudad Condal',tags:['타파스바','인기'],menu:'타파스',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=Cerveceria+Ciudad+Condal+Barcelona',review:'https://search.naver.com/search.naver?query=시우다드+콘달+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Les Quinze Nits',en:'',tags:['카탈로니아'],menu:'추가 예정',price:'€€',rating:'4.2',map:'https://maps.google.com/?q=Les+Quinze+Nits+Barcelona',review:'https://search.naver.com/search.naver?query=Les+Quinze+Nits+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'Surf House Barcelona',en:'',tags:['음식점','해변'],menu:'추가 예정',price:'€',rating:'4.3',map:'https://maps.google.com/?q=Surf+House+Barcelona',review:'https://search.naver.com/search.naver?query=Surf+House+Barcelona+후기'},
+  {city:'bcn',type:'food',name:'Pincho J',en:'',tags:['타파스','핀초'],menu:'핀초',price:'€',rating:'4.0',map:'https://maps.google.com/?q=Pincho+J+Barcelona',review:'https://search.naver.com/search.naver?query=Pincho+J+바르셀로나+후기'},
+  {city:'bcn',type:'food',name:'La Tasqueta de Blai',en:'',tags:['타파스','핀초'],menu:'핀초',price:'€',rating:'4.5',map:'https://maps.google.com/?q=La+Tasqueta+de+Blai+Barcelona',review:'https://search.naver.com/search.naver?query=La+Tasqueta+de+Blai+후기'},
+  {city:'bcn',type:'food',name:'Bun Bo Barcelona',en:'Vietnamese',tags:['베트남','쌀국수'],menu:'쌀국수',price:'€',rating:'4.3',map:'https://maps.google.com/?q=Bun+Bo+Barcelona',review:'https://search.naver.com/search.naver?query=Bun+Bo+Barcelona+후기'},
+  {city:'bcn',type:'cafe',name:'호프만 베이커리',en:'Hofmann Bakery',tags:['케이크','베이커리'],menu:'크루아상·케이크',price:'€',rating:'4.4',map:'https://maps.google.com/?q=Hofmann+Bakery+Barcelona',review:'https://search.naver.com/search.naver?query=호프만+베이커리+바르셀로나+후기'},
+  {city:'bcn',type:'cafe',name:'추레리아 라이에타나',en:'Churreria Laietana',tags:['추로스'],menu:'추로스+핫초코',price:'₩',rating:'4.7',map:'https://maps.google.com/?q=Churreria+Laietana+Barcelona',review:'https://search.naver.com/search.naver?query=추레리아+라이에타나+바르셀로나+후기'},
+  {city:'bcn',type:'cafe',name:'그란자 둘시네아',en:'Granja Dulcinea',tags:['초콜릿','카페'],menu:'핫초코',price:'€',rating:'4.2',map:'https://maps.google.com/?q=Granja+Dulcinea+Barcelona',review:'https://search.naver.com/search.naver?query=그란자+둘시네아+후기'},
+  {city:'bcn',type:'cafe',name:'추레리아 마누엘 산 로만',en:'Churrería Manuel San Román',tags:['추로스'],menu:'추로스',price:'₩',rating:'4.5',map:'https://maps.google.com/?q=Churreria+Manuel+San+Roman+Barcelona',review:'https://search.naver.com/search.naver?query=추레리아+마누엘+산+로만+후기'},
+  {city:'bcn',type:'cafe',name:'Be Chocolat Gòtic',en:'',tags:['초콜릿카페'],menu:'초콜릿 음료',price:'€',rating:'4.8',map:'https://maps.google.com/?q=Be+Chocolat+Gotic+Barcelona',review:'https://search.naver.com/search.naver?query=Be+Chocolat+Gotic+바르셀로나+후기'},
+  {city:'bcn',type:'cafe',name:'Rocambolesc',en:'',tags:['아이스크림'],menu:'수제 아이스크림',price:'€',rating:'4.1',map:'https://maps.google.com/?q=Rocambolesc+Barcelona',review:'https://search.naver.com/search.naver?query=Rocambolesc+아이스크림+바르셀로나+후기'},
+  {city:'bcn',type:'cafe',name:'Hidden Coffee Roasters',en:'El Born',tags:['커피','스페셜티'],menu:'에스프레소·라테',price:'€',rating:'4.4',map:'https://maps.google.com/?q=Hidden+Coffee+Roasters+El+Born+Barcelona',review:'https://search.naver.com/search.naver?query=Hidden+Coffee+Roasters+바르셀로나+후기'},
+  {city:'bcn',type:'cafe',name:'Three Marks Coffee',en:'',tags:['커피','스페셜티'],menu:'필터커피',price:'€',rating:'4.4',map:'https://maps.google.com/?q=Three+Marks+Coffee+Barcelona',review:'https://search.naver.com/search.naver?query=Three+Marks+Coffee+바르셀로나+후기'},
+  {city:'bcn',type:'cafe',name:'Syra Coffee - Born',en:'',tags:['카페'],menu:'커피',price:'€',rating:'4.7',map:'https://maps.google.com/?q=Syra+Coffee+Born+Barcelona',review:'https://search.naver.com/search.naver?query=Syra+Coffee+Born+바르셀로나+후기'},
+  {city:'bcn',type:'cafe',name:'Syra Coffee - Universitat',en:'',tags:['커피','스페셜티'],menu:'커피',price:'€',rating:'4.5',map:'https://maps.google.com/?q=Syra+Coffee+Universitat+Barcelona',review:'https://search.naver.com/search.naver?query=Syra+Coffee+Universitat+후기'},
+  {city:'bcn',type:'cafe',name:'Granja M. Viader',en:'',tags:['카페테리아','전통'],menu:'카카오·카페',price:'€',rating:'4.4',map:'https://maps.google.com/?q=Granja+M+Viader+Barcelona',review:'https://search.naver.com/search.naver?query=Granja+Viader+바르셀로나+후기'},
+  {city:'mal',type:'food',name:'Simply Fosh',en:'',tags:['파인다이닝','미슐랭'],menu:'테이스팅 메뉴',price:'€€€',rating:'4.5',map:'https://maps.google.com/?q=Simply+Fosh+Palma',review:'https://search.naver.com/search.naver?query=Simply+Fosh+마요르카+후기',req:true},
+  {city:'mal',type:'food',name:'Es Parlament',en:'',tags:['지중해','해산물'],menu:'해산물',price:'€€',rating:'4.4',map:'https://maps.google.com/?q=Es+Parlament+Palma',review:'https://search.naver.com/search.naver?query=Es+Parlament+팔마+마요르카+후기'},
+  {city:'por',type:'food',name:'Taberna dos Mercadores',en:'',tags:['포르투갈','전통'],menu:'바칼라우·해산물',price:'€€',rating:'4.5',map:'https://maps.google.com/?q=Taberna+dos+Mercadores+Porto',review:'https://search.naver.com/search.naver?query=Taberna+dos+Mercadores+포르투+후기'},
+  {city:'por',type:'food',name:'Francesinha Café',en:'',tags:['현지식','필수'],menu:'프란세지냐',price:'€',rating:'4.3',map:'https://maps.google.com/?q=Francesinha+Cafe+Porto',review:'https://search.naver.com/search.naver?query=프란세지냐+카페+포르투+후기'},
 ];
 
 const spots = [
-  {city:'bcn',name:'사그라다 파밀리아',cat:'성당 · 가우디',rating:'4.8 ★ (322,439)',map:'https://maps.google.com/?q=Sagrada+Familia+Barcelona',note:'사전 예약 필수',req:true},
-  {city:'bcn',name:'구엘 공원',cat:'공원 · 가우디',rating:'4.4 ★ (233,219)',map:'https://maps.google.com/?q=Park+Guell+Barcelona',note:'사전 예약 필수',req:true},
-  {city:'bcn',name:'라 보케리아',cat:'시장',rating:'4.5 ★ (210,194)',map:'https://maps.google.com/?q=La+Boqueria+Barcelona',note:'오전 방문 추천'},
-  {city:'bcn',name:'까사 비센스',cat:'박물관 · 가우디',rating:'4.6 ★ (21,485)',map:'https://maps.google.com/?q=Casa+Vicens+Barcelona',note:''},
-  {city:'bcn',name:'카탈루냐 광장',cat:'대광장',rating:'4.5 ★ (216,406)',map:'https://maps.google.com/?q=Placa+de+Catalunya+Barcelona',note:'중심 교통 허브'},
-  {city:'bcn',name:'몬주익 마법의 분수',cat:'분수 · 야경',rating:'4.6 ★ (89,530)',map:'https://maps.google.com/?q=Magic+Fountain+Montjuic+Barcelona',note:'야간 쇼 추천'},
-  {city:'bcn',name:'캄 노우',cat:'경기장 · FC 바르셀로나',rating:'4.6 ★ (167,973)',map:'https://maps.google.com/?q=Camp+Nou+Barcelona',note:'투어 예약 가능'},
-  {city:'bcn',name:'Arenas de Barcelona',cat:'쇼핑몰 · 옛 투우장',rating:'4.2 ★ (70,378)',map:'https://maps.google.com/?q=Arenas+de+Barcelona',note:'전망대 무료'},
-  {city:'bcn',name:'El Corte Inglés Plaça',cat:'쇼핑몰',rating:'4.2 ★ (54,992)',map:'https://maps.google.com/?q=El+Corte+Ingles+Placa+Catalunya+Barcelona',note:''},
-  {city:'mal',name:'팔마 대성당',cat:'대성당',rating:'4.7 ★ (63,958)',map:'https://maps.google.com/?q=Catedral+de+Mallorca',note:'가우디 내부 장식'},
-  {city:'mal',name:'Train Sóller Station',cat:'보존 철도',rating:'4.4 ★ (12,362)',map:'https://maps.google.com/?q=Soller+Train+Station+Mallorca',note:'예약 추천',req:true},
-  {city:'mal',name:'Cuevas del Drach',cat:'관광 명소 · 동굴',rating:'4.3 ★ (66,669)',map:'https://maps.google.com/?q=Cuevas+del+Drach+Mallorca',note:'예약 필수',req:true},
-  {city:'mal',name:'Port de Sóller',cat:'항구 마을',rating:'—',map:'https://maps.google.com/?q=Port+de+Soller+Mallorca',note:'수영 가능'},
-  {city:'mal',name:'Caló del Moro',cat:'해변',rating:'4.6 ★ (8,970)',map:'https://maps.google.com/?q=Calo+del+Moro+Mallorca',note:'성수기 이른 방문 필수'},
-  {city:'mal',name:'Església de Sant Llorenç',cat:'천주교 성당',rating:'4.3 ★ (6)',map:'https://maps.google.com/?q=Església+parroquial+de+Sant+Llorenç+des+Cardassar',note:''},
+  {city:'bcn',name:'사그라다 파밀리아',cat:'성당 · 가우디',rating:'4.8 ★',map:'https://maps.google.com/?q=Sagrada+Familia+Barcelona',review:'https://search.naver.com/search.naver?query=사그라다+파밀리아+후기',note:'사전 예약 필수',req:true},
+  {city:'bcn',name:'구엘 공원',cat:'공원 · 가우디',rating:'4.4 ★',map:'https://maps.google.com/?q=Park+Guell+Barcelona',review:'https://search.naver.com/search.naver?query=구엘+공원+후기',note:'사전 예약 필수',req:true},
+  {city:'bcn',name:'라 보케리아',cat:'시장',rating:'4.5 ★',map:'https://maps.google.com/?q=La+Boqueria+Barcelona',review:'https://search.naver.com/search.naver?query=라보케리아+바르셀로나+후기',note:'오전 방문 추천'},
+  {city:'bcn',name:'까사 비센스',cat:'박물관 · 가우디',rating:'4.6 ★',map:'https://maps.google.com/?q=Casa+Vicens+Barcelona',review:'https://search.naver.com/search.naver?query=까사비센스+바르셀로나+후기',note:''},
+  {city:'bcn',name:'카탈루냐 광장',cat:'대광장',rating:'4.5 ★',map:'https://maps.google.com/?q=Placa+de+Catalunya+Barcelona',review:'https://search.naver.com/search.naver?query=카탈루냐광장+바르셀로나',note:'교통 허브'},
+  {city:'bcn',name:'몬주익 마법의 분수',cat:'분수 · 야경',rating:'4.6 ★',map:'https://maps.google.com/?q=Magic+Fountain+Montjuic+Barcelona',review:'https://search.naver.com/search.naver?query=몬주익+분수+쇼+후기',note:'야간 쇼 추천'},
+  {city:'bcn',name:'캄 노우',cat:'경기장 · FC 바르셀로나',rating:'4.6 ★',map:'https://maps.google.com/?q=Camp+Nou+Barcelona',review:'https://search.naver.com/search.naver?query=캄노우+투어+후기',note:'투어 예약 가능'},
+  {city:'bcn',name:'Arenas de Barcelona',cat:'쇼핑몰 · 옛 투우장',rating:'4.2 ★',map:'https://maps.google.com/?q=Arenas+de+Barcelona',review:'https://search.naver.com/search.naver?query=Arenas+de+Barcelona+후기',note:'전망대 무료'},
+  {city:'bcn',name:'El Corte Inglés Plaça',cat:'쇼핑몰',rating:'4.2 ★',map:'https://maps.google.com/?q=El+Corte+Ingles+Placa+Catalunya+Barcelona',review:'https://search.naver.com/search.naver?query=El+Corte+Ingles+바르셀로나',note:''},
+  {city:'mal',name:'팔마 대성당',cat:'대성당',rating:'4.7 ★',map:'https://maps.google.com/?q=Catedral+de+Mallorca',review:'https://search.naver.com/search.naver?query=팔마+대성당+마요르카+후기',note:'가우디 내부 장식'},
+  {city:'mal',name:'Train Sóller Station',cat:'보존 철도',rating:'4.4 ★',map:'https://maps.google.com/?q=Soller+Train+Station+Mallorca',review:'https://search.naver.com/search.naver?query=소예르+열차+마요르카+후기',note:'예약 필수',req:true},
+  {city:'mal',name:'Cuevas del Drach',cat:'관광명소 · 동굴',rating:'4.3 ★',map:'https://maps.google.com/?q=Cuevas+del+Drach+Mallorca',review:'https://search.naver.com/search.naver?query=드라크+동굴+마요르카+후기',note:'예약 필수',req:true},
+  {city:'mal',name:'Port de Sóller',cat:'항구 마을',rating:'4.4 ★',map:'https://maps.google.com/?q=Port+de+Soller+Mallorca',review:'https://search.naver.com/search.naver?query=Port+de+Soller+마요르카+후기',note:'수영 가능'},
+  {city:'mal',name:'Caló del Moro',cat:'해변',rating:'4.6 ★',map:'https://maps.google.com/?q=Calo+del+Moro+Mallorca',review:'https://search.naver.com/search.naver?query=Calo+del+Moro+마요르카+후기',note:'이른 방문 필수'},
+  {city:'por',name:'동 루이스 1세 다리',cat:'다리 · 야경',rating:'4.7 ★',map:'https://maps.google.com/?q=Dom+Luis+Bridge+Porto',review:'https://search.naver.com/search.naver?query=동루이스+다리+포르투+후기',note:'상층 뷰 추천'},
+  {city:'por',name:'렐루 서점',cat:'서점 · 세계 3위',rating:'4.3 ★',map:'https://maps.google.com/?q=Livraria+Lello+Porto',review:'https://search.naver.com/search.naver?query=렐루+서점+포르투+후기',note:'입장료 €8'},
+  {city:'por',name:'가이아 와이너리',cat:'포트와인 시음',rating:'4.5 ★',map:'https://maps.google.com/?q=Vila+Nova+de+Gaia+Porto',review:'https://search.naver.com/search.naver?query=가이아+와이너리+포르투+후기',note:'예약 추천',req:true},
+  {city:'por',name:'볼량 시장',cat:'재래시장',rating:'4.3 ★',map:'https://maps.google.com/?q=Mercado+do+Bolhão+Porto',review:'https://search.naver.com/search.naver?query=볼량+시장+포르투+후기',note:'기념품 쇼핑'},
+  {city:'por',name:'모루 정원',cat:'야경 명소',rating:'4.5 ★',map:'https://maps.google.com/?q=Jardim+do+Morro+Porto',review:'https://search.naver.com/search.naver?query=모루정원+포르투+야경+후기',note:'포르투 야경 1위'},
 ];
 
-let currentRestoFilter = 'all';
-let currentSubFilter = 'all';
+let currentRestoFilter='all', currentSubFilter='all';
 
 function calcDday(){
-  const now = new Date();
-  const diff = Math.ceil((TRIP_START - now)/(1000*60*60*24));
-  document.getElementById('dday-num').textContent = diff > 0 ? 'D-'+diff : diff === 0 ? 'D-Day!' : '여행중!';
+  const diff=Math.ceil((TRIP_START-new Date())/(864e5));
+  document.getElementById('dday-num').textContent=diff>0?'D-'+diff:diff===0?'D-Day!':'여행중!';
 }
 
 function renderDays(){
-  const dows = ['일','월','화','수','목','금','토'];
-  document.getElementById('day-list').innerHTML = days.map(d=>`
+  document.getElementById('day-list').innerHTML=days.map(d=>`
     <div class="day-card" onclick="openDay(${d.day-1})">
       <div class="day-num">D${d.day}</div>
       <div class="day-info">
@@ -368,79 +421,71 @@ function renderDays(){
 
 function getRestos(){
   return restos.filter(r=>{
-    if(currentRestoFilter !== 'all' && r.city !== currentRestoFilter) return false;
-    if(currentSubFilter !== 'all' && r.type !== currentSubFilter) return false;
+    if(currentRestoFilter!=='all'&&r.city!==currentRestoFilter)return false;
+    if(currentSubFilter!=='all'&&r.type!==currentSubFilter)return false;
     return true;
   });
 }
 
 function renderSubFilter(){
-  const wrap = document.getElementById('sub-filter-wrap');
-  if(currentRestoFilter === 'all'){
-    wrap.innerHTML = `<div class="sub-filter">
+  const w=document.getElementById('sub-filter-wrap');
+  if(currentRestoFilter==='all'||currentRestoFilter==='bcn'){
+    w.innerHTML=`<div class="sub-filter">
       <button class="sub-filter-btn ${currentSubFilter==='all'?'active':''}" onclick="setSubFilter('all',this)">전체</button>
       <button class="sub-filter-btn ${currentSubFilter==='food'?'active':''}" onclick="setSubFilter('food',this)">식사</button>
       <button class="sub-filter-btn ${currentSubFilter==='cafe'?'active':''}" onclick="setSubFilter('cafe',this)">카페·디저트</button>
     </div>`;
-  } else if(currentRestoFilter === 'bcn'){
-    wrap.innerHTML = `<div class="sub-filter">
-      <button class="sub-filter-btn ${currentSubFilter==='all'?'active':''}" onclick="setSubFilter('all',this)">전체</button>
-      <button class="sub-filter-btn ${currentSubFilter==='food'?'active':''}" onclick="setSubFilter('food',this)">식사</button>
-      <button class="sub-filter-btn ${currentSubFilter==='cafe'?'active':''}" onclick="setSubFilter('cafe',this)">카페·디저트</button>
-    </div>`;
-  } else {
-    wrap.innerHTML = '';
-    currentSubFilter = 'all';
-  }
+  }else{w.innerHTML='';currentSubFilter='all';}
 }
 
-function setSubFilter(type, btn){
-  currentSubFilter = type;
+function setSubFilter(t,btn){
+  currentSubFilter=t;
   document.querySelectorAll('.sub-filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderRestoList();
 }
 
 function renderRestoList(){
-  const list = getRestos();
-  document.getElementById('resto-list').innerHTML = list.length ? list.map(r=>`
+  const list=getRestos();
+  document.getElementById('resto-list').innerHTML=list.length?list.map(r=>`
     <div class="resto-card">
-      <div class="resto-name">${r.name} ${r.en?`<span class="resto-en">${r.en}</span>`:''}</div>
-      <div class="resto-tags">${r.tags.map(t=>`<span class="tag">${t}</span>`).join('')}
-        <span class="rating-badge">★ ${r.rating}</span>
-      </div>
+      <div class="resto-name">${r.name}${r.en?` <span class="resto-en">${r.en}</span>`:''}</div>
+      <div class="resto-tags">${r.tags.map(t=>`<span class="tag">${t}</span>`).join('')}<span class="rating-badge">★ ${r.rating}</span>${r.req?'<span class="badge-req">예약필요</span>':''}</div>
       <div class="resto-row">
-        <span class="resto-menu">${r.menu !== '추가 예정' ? '추천: '+r.menu : '메뉴 추가 예정'}</span>
+        <span class="resto-menu">${r.menu!=='추가 예정'?'추천: '+r.menu:'메뉴 추가 예정'}</span>
         <span class="price">${r.price}</span>
       </div>
-      <div style="margin-top:8px"><a class="map-btn" href="${r.map}" target="_blank">📍 지도 보기</a></div>
-    </div>`).join('') : '<div style="text-align:center;color:#9ca3af;padding:30px;font-size:13px">해당 카테고리 항목 없음</div>';
+      <div class="btn-row">
+        <a class="map-btn" href="${r.map}" target="_blank">📍 지도 보기</a>
+        <a class="review-btn" href="${r.review}" target="_blank">📝 후기 보기</a>
+      </div>
+    </div>`).join(''):'<div style="text-align:center;color:#9ca3af;padding:30px;font-size:13px">해당 카테고리 없음</div>';
 }
 
-function filterResto(city, btn){
-  currentRestoFilter = city;
-  currentSubFilter = 'all';
+function filterResto(city,btn){
+  currentRestoFilter=city;currentSubFilter='all';
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  renderSubFilter();
-  renderRestoList();
+  renderSubFilter();renderRestoList();
 }
 
 function renderSpots(){
-  const cities = [{key:'bcn',label:'바르셀로나 🇪🇸'},{key:'mal',label:'마요르카 🌊'}];
-  document.getElementById('spot-list').innerHTML = cities.map(c=>{
-    const list = spots.filter(s=>s.city===c.key);
-    return `<div class="spot-section">
+  const cities=[{key:'bcn',label:'바르셀로나 🇪🇸'},{key:'mal',label:'마요르카 🌊'},{key:'por',label:'포르투 🇵🇹'}];
+  document.getElementById('spot-list').innerHTML=cities.map(c=>{
+    const list=spots.filter(s=>s.city===c.key);
+    return`<div class="spot-section">
       <div class="spot-section-title">${c.label}</div>
       ${list.map(s=>`
         <div class="spot-card">
-          <div class="spot-emoji">📍</div>
           <div class="spot-info" style="flex:1">
-            <div class="name">${s.name} ${s.req?'<span class="badge-req">예약필요</span>':''}</div>
+            <div class="name">${s.name}${s.req?'<span class="badge-req" style="margin-left:5px">예약필요</span>':''}</div>
             <div class="cat">${s.cat}</div>
             <div class="rating">${s.rating}</div>
-            ${s.note?`<div style="font-size:11px;color:#6b7280;margin-top:3px">💬 ${s.note}</div>`:''}
-            <div class="spot-map" style="margin-top:6px"><a class="map-btn" href="${s.map}" target="_blank">📍 지도 보기</a></div>
+            ${s.note?`<div class="spot-note">💬 ${s.note}</div>`:''}
+            <div class="btn-row" style="margin-top:6px">
+              <a class="map-btn" href="${s.map}" target="_blank">📍 지도</a>
+              <a class="review-btn" href="${s.review}" target="_blank">📝 후기</a>
+            </div>
           </div>
         </div>`).join('')}
     </div>`;
@@ -448,113 +493,83 @@ function renderSpots(){
 }
 
 function openDay(idx){
-  const d = days[idx];
-  document.getElementById('modal-title').textContent = `Day ${d.day} · ${d.title}`;
-  document.getElementById('modal-sub').textContent = `${d.date} (${d.dow}) · ${d.city}`;
-  document.getElementById('modal-body').innerHTML = d.timeline.map((t,i)=>`
+  const d=days[idx];
+  document.getElementById('modal-title').textContent=`Day ${d.day} · ${d.title}`;
+  document.getElementById('modal-sub').textContent=`${d.date} (${d.dow}) · ${d.city}`;
+  document.getElementById('modal-body').innerHTML=d.timeline.map((t,i)=>`
     <div class="timeline-item">
       <div class="tl-left">
         <div class="tl-time">${t.time}</div>
         <div class="tl-dot"></div>
-        ${i < d.timeline.length-1 ? '<div class="tl-line"></div>' : ''}
+        ${i<d.timeline.length-1?'<div class="tl-line"></div>':''}
       </div>
       <div class="tl-content">
         <div class="tl-place">${t.place}${t.req?'<span class="badge-req">예약필요</span>':''}</div>
         <div class="tl-desc">${t.desc}</div>
-        ${t.map ? `<a class="tl-map" href="${t.map}" target="_blank">📍 지도 보기</a>` : ''}
+        ${t.map?`<a class="tl-map" href="${t.map}" target="_blank">📍 지도 보기</a>`:''}
       </div>
     </div>`).join('');
   document.getElementById('modal').classList.add('open');
 }
 
-function closeModal(e){ if(e.target===document.getElementById('modal')) closeModalBtn(); }
-function closeModalBtn(){ document.getElementById('modal').classList.remove('open'); }
+function closeModal(e){if(e.target===document.getElementById('modal'))closeModalBtn();}
+function closeModalBtn(){document.getElementById('modal').classList.remove('open');}
 
-function switchTab(name, btn){
+function switchTab(name,btn){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   btn.classList.add('active');
 }
 
-// 항공편 알람
-const FLIGHT_ALERTS = [
-  {
-    id: 'icn_depart',
-    label: '✈️ 출국 3시간 전!',
-    msg: 'ICN 출발 3시간 전이에요!\nEK323 · 23:55 출발\n지금 공항으로 출발하세요 🧳',
-    alertAt: new Date('2026-07-18T20:55:00'),
-    flightTime: '07.18 (토) 23:55',
-    flight: 'EK323 · 인천 → 두바이 → EK185 → 바르셀로나'
-  }
-];
+// 알람
+const FLIGHT_ALERTS=[{
+  id:'icn_depart',label:'✈️ 출국 3시간 전!',
+  msg:'EK323 · 23:55 출발\n지금 공항으로 출발하세요 🧳',
+  alertAt:new Date('2026-07-18T20:55:00'),
+  flightTime:'07.18 (토) 23:55',
+  flight:'EK323 · 인천 → 두바이 → EK185 → 바르셀로나'
+}];
 
-let alertTimers = [];
-let notifPermission = false;
-
-function initAlerts() {
-  if (!('Notification' in window)) return;
-  const banner = document.getElementById('alert-banner');
-  const now = new Date();
-
-  FLIGHT_ALERTS.forEach(a => {
-    const diff = a.alertAt - now;
-    if (diff > 0) {
-      const t = setTimeout(() => triggerAlert(a), diff);
-      alertTimers.push(t);
-    }
-    // 알람 시간 지났고 출발 전이면 배너 표시
-    if (now >= a.alertAt && now < new Date('2026-07-18T23:55:00')) {
-      showBanner(a);
-    }
+function initAlerts(){
+  if(!('Notification' in window))return;
+  const now=new Date();
+  FLIGHT_ALERTS.forEach(a=>{
+    const diff=a.alertAt-now;
+    if(diff>0)setTimeout(()=>triggerAlert(a),diff);
+    if(now>=a.alertAt&&now<new Date('2026-07-18T23:55:00'))showBanner(a);
   });
 }
 
-function showBanner(a) {
-  const b = document.getElementById('alert-banner');
-  b.innerHTML = `<div style="display:flex;align-items:flex-start;gap:10px">
+function showBanner(a){
+  const b=document.getElementById('alert-banner');
+  b.innerHTML=`<div style="display:flex;align-items:flex-start;gap:10px">
     <span style="font-size:22px">✈️</span>
     <div style="flex:1">
       <div style="font-weight:600;font-size:13px;margin-bottom:2px">${a.label}</div>
       <div style="font-size:11px;opacity:0.9">${a.flight}</div>
       <div style="font-size:12px;margin-top:2px;font-weight:600">${a.flightTime} 출발</div>
     </div>
-    <button onclick="this.parentElement.parentElement.parentElement.style.display='none'" style="background:rgba(255,255,255,0.2);border:none;color:#fff;border-radius:50%;width:24px;height:24px;font-size:13px;cursor:pointer;flex-shrink:0">✕</button>
+    <button onclick="this.parentElement.parentElement.parentElement.style.display='none'" style="background:rgba(255,255,255,0.2);border:none;color:#fff;border-radius:50%;width:24px;height:24px;font-size:13px;cursor:pointer">✕</button>
   </div>`;
-  b.style.display = 'block';
+  b.style.display='block';
 }
 
-function triggerAlert(a) {
+function triggerAlert(a){
   showBanner(a);
-  if (Notification.permission === 'granted') {
-    new Notification(a.label, { body: a.msg, icon: '✈️' });
-  }
+  if(Notification.permission==='granted')new Notification(a.label,{body:a.msg});
 }
 
-function requestNotifPermission() {
-  if (!('Notification' in window)) {
-    alert('이 브라우저는 알림을 지원하지 않아요.');
-    return;
-  }
-  Notification.requestPermission().then(p => {
-    const btn = document.getElementById('notif-btn');
-    if (p === 'granted') {
-      btn.textContent = '🔔 알림 설정 완료';
-      btn.style.background = '#166534';
-      btn.style.borderColor = '#166534';
-      notifPermission = true;
-    } else {
-      btn.textContent = '🔕 알림 거부됨';
-    }
+function requestNotifPermission(){
+  if(!('Notification' in window)){alert('이 브라우저는 알림을 지원하지 않아요.');return;}
+  Notification.requestPermission().then(p=>{
+    const btn=document.getElementById('notif-btn');
+    if(p==='granted'){btn.textContent='🔔 알림 설정 완료';btn.style.background='rgba(255,255,255,0.3)';}
+    else btn.textContent='🔕 알림 거부됨';
   });
 }
 
-calcDday();
-renderDays();
-renderSubFilter();
-renderRestoList();
-renderSpots();
-initAlerts();
+calcDday();renderDays();renderSubFilter();renderRestoList();renderSpots();initAlerts();
 </script>
 </body>
 </html>
